@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://rent-hub-api.onrender.com'
+  apiUrl: 'https://renthub-ywo1.onrender.com/'
 };
