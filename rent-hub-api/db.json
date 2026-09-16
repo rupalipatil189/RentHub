@@ -1,0 +1,349 @@
+{
+  "users": [
+    {
+      "name": "Rupali Patil",
+      "email": "rupalipatil189@gmail.com",
+      "phone": "8943223332",
+      "password": "Test@123",
+      "role": "TENANT",
+      "id": "4"
+    },
+    {
+      "name": "Swapnil",
+      "email": "swap@gmail.com",
+      "phone": "8975697866",
+      "password": "Test@123",
+      "role": "LANDLORD",
+      "id": "v-kpuBmGS6U"
+    }
+  ],
+  "apartments": [
+    {
+      "id": "1",
+      "title": "Beautiful 2 BHK Apartment in Wakad",
+      "description": "Spacious apartment with excellent connectivity and modern amenities.",
+      "location": "Wakad",
+      "city": "Pune",
+      "price": 25000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 1100,
+      "propertyType": "Apartment",
+      "furnished": "Semi-Furnished",
+      "amenities": [
+        "Parking",
+        "Gym",
+        "Swimming Pool",
+        "Security"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+      ],
+      "ownerId": "2",
+      "ownerName": "Amit Sharma",
+      "availableFrom": "2026-09-01"
+    },
+    {
+      "id": "2",
+      "title": "Modern 1 BHK in Hinjewadi",
+      "description": "Perfect apartment for working professionals near IT parks.",
+      "location": "Hinjewadi",
+      "city": "Pune",
+      "price": 18000,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "area": 650,
+      "propertyType": "Apartment",
+      "furnished": "Fully Furnished",
+      "amenities": [
+        "Parking",
+        "Gym",
+        "Security"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+      ],
+      "ownerId": "2",
+      "ownerName": "Amit Sharma",
+      "availableFrom": "2026-08-25"
+    },
+    {
+      "id": "3",
+      "title": "Luxury 3 BHK Apartment",
+      "description": "Premium apartment with spacious rooms and excellent amenities.",
+      "location": "Baner",
+      "city": "Pune",
+      "price": 45000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "area": 1800,
+      "propertyType": "Apartment",
+      "furnished": "Fully Furnished",
+      "amenities": [
+        "Parking",
+        "Gym",
+        "Swimming Pool",
+        "Club House",
+        "Security"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d"
+      ],
+      "ownerId": "2",
+      "ownerName": "Amit Sharma",
+      "availableFrom": "2026-09-10"
+    },
+    {
+      "title": "Test Listing",
+      "description": "test 1234454444444444444444444444444444444444444444444444444444",
+      "location": "Ravet",
+      "city": "Pune",
+      "price": 50000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 1000,
+      "propertyType": "Apartment",
+      "furnished": "Fully Furnished",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d"
+      ],
+      "ownerName": "Rupali",
+      "ownerId": "4",
+      "availableFrom": "2026-08-31",
+      "id": "FT29ps86oAA"
+    },
+    {
+      "title": "MiRavet",
+      "description": "n,wnk.d.se122222222dccccccccccccccccccc",
+      "location": "Ravet",
+      "city": "Pune",
+      "price": 30000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "area": 1000,
+      "propertyType": "Apartment",
+      "furnished": "Semi-Furnished",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+      ],
+      "ownerName": "Rupali",
+      "ownerId": "2",
+      "availableFrom": "2026-09-02",
+      "id": "_Jn0hs43cmo"
+    },
+    {
+      "ownerId": "",
+      "title": "Somani Dream Home",
+      "description": "ggilhhol;hoooooooooooooooo",
+      "location": "Punawale",
+      "city": "Pune",
+      "price": 25000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "area": 1000,
+      "propertyType": "Apartment",
+      "furnished": "Fully Furnished",
+      "images": [
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+      ],
+      "ownerName": "Rupali",
+      "availableFrom": "2026-09-03",
+      "id": "ifos8yuIjH8"
+    },
+    {
+      "ownerId": "4",
+      "title": "Punawale",
+      "description": "jfjjjjjjjjjjdsssssssssssss",
+      "location": "Punawale",
+      "city": "Pune",
+      "price": 50000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "area": 2000,
+      "propertyType": "Apartment",
+      "furnished": "Fully Furnished",
+      "images": [
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+      ],
+      "ownerName": "Rupali Patil",
+      "availableFrom": "2026-09-02",
+      "id": "YY5WNTm_y3k"
+    },
+    {
+      "ownerId": "4",
+      "title": "Akurdi",
+      "description": "chnage descjkvvvvvvvvvvvvvvvvvvvv1234567",
+      "location": "Akurdi",
+      "city": "Pune",
+      "price": 40000,
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "area": 1500,
+      "propertyType": "House",
+      "furnished": "Fully Furnished",
+      "images": [
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+      ],
+      "ownerName": "Test",
+      "availableFrom": "2026-09-04",
+      "id": "HGcYGOPMwV0"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "1",
+      "userId": "1",
+      "apartmentId": "1"
+    },
+    {
+      "userId": "2",
+      "apartmentId": "2",
+      "id": "5Aua-39msrY"
+    },
+    {
+      "userId": "2",
+      "apartmentId": "1",
+      "id": "Mw5zxqnGzSM"
+    },
+    {
+      "userId": "4",
+      "apartmentId": "3",
+      "id": "vHUy96IZKSA"
+    },
+    {
+      "userId": "4",
+      "apartmentId": "2",
+      "id": "WxYhn9wZW6c"
+    },
+    {
+      "userId": "4",
+      "apartmentId": "2",
+      "id": "-thfXsiZnkQ"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "apartmentId": "1",
+      "userId": "1",
+      "userName": "Rupali Patil",
+      "text": "Is parking available?",
+      "parentCommentId": null,
+      "createdAt": "2026-08-20T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "apartmentId": "1",
+      "userId": "2",
+      "userName": "Amit Sharma",
+      "text": "Yes, one parking slot is available.",
+      "parentCommentId": "1",
+      "createdAt": "2026-08-20T10:05:00Z"
+    },
+    {
+      "apartmentId": null,
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "text": "",
+      "createdAt": "2026-08-26T10:18:51.578Z",
+      "id": "uJ1RWz2jONI"
+    },
+    {
+      "apartmentId": null,
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "text": "effef",
+      "createdAt": "2026-08-26T10:41:11.326Z",
+      "id": "IsIRrq5zGo4"
+    },
+    {
+      "apartmentId": "1",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "text": "test1244",
+      "createdAt": "2026-08-26T11:01:06.994Z",
+      "id": "y4O5iNhOezU"
+    },
+    {
+      "apartmentId": "1",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "text": "test1244",
+      "createdAt": "2026-08-26T11:01:07.887Z",
+      "id": "2pRT8DuPq2g"
+    },
+    {
+      "apartmentId": "1",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "text": "test12334",
+      "createdAt": "2026-08-26T11:01:55.192Z",
+      "id": "Omab1sJ42cY"
+    },
+    {
+      "apartmentId": "1",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "text": "no",
+      "createdAt": "2026-08-26T11:17:08.073Z",
+      "id": "QGjWQpCcvuw"
+    },
+    {
+      "apartmentId": "1",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "text": "fbngngn",
+      "createdAt": "2026-08-26T11:40:46.505Z",
+      "id": "Ug52jVeILZo"
+    },
+    {
+      "apartmentId": "YY5WNTm_y3k",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "text": "Hi",
+      "createdAt": "2026-09-01T06:33:57.647Z",
+      "id": "9jQ6bKPVKRE"
+    }
+  ],
+  "inquiries": [
+    {
+      "id": "1",
+      "apartmentId": "1",
+      "userId": "1",
+      "userName": "Rupali Patil",
+      "ownerId": "2",
+      "message": "I am interested in this apartment. Is it still available?",
+      "status": "NEW",
+      "createdAt": "2026-08-20T11:00:00Z"
+    },
+    {
+      "apartmentId": "1",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "ownerId": "2",
+      "message": "Hi is this available",
+      "createdAt": "2026-08-26T11:36:20.952Z",
+      "id": "o-4hiIauMIM"
+    },
+    {
+      "apartmentId": "1",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "ownerId": "2",
+      "message": "swapnil inquiry",
+      "createdAt": "2026-08-26T11:40:59.756Z",
+      "id": "ulRIvf6eS8Y"
+    },
+    {
+      "apartmentId": "YY5WNTm_y3k",
+      "userId": "4",
+      "userName": "Rupali Patil",
+      "ownerId": "4",
+      "message": "Is this avilable",
+      "createdAt": "2026-09-01T06:33:59.333Z",
+      "id": "G2VUGv-8G-k"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
