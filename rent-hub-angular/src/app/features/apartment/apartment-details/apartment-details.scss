@@ -1,0 +1,182 @@
+.details-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Apartment details */
+
+.details-page > h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+.details-page > p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.details-page > h2 {
+  margin: 20px 0 30px;
+  font-size: 26px;
+  color: #673ab7;
+  font-weight: 700;
+}
+
+/* Comments */
+
+.comments-section {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.comments-section > h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.comment {
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  background: #f8f8fb;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.comment-header strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.comment-header small {
+  color: #888;
+  font-size: 12px;
+}
+
+.comment p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Comment form */
+
+.details-page form {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.details-page form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.details-page textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  resize: vertical;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.details-page textarea:focus {
+  border-color: #673ab7;
+  box-shadow: 0 0 0 3px rgba(103, 58, 183, 0.1);
+}
+
+.details-page button {
+  min-width: 150px;
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #673ab7;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.details-page button:hover {
+  background: #56309b;
+}
+
+.details-page button:active {
+  transform: translateY(1px);
+}
+
+/* Favourite button */
+
+.details-page button[type='button'] {
+  background: white;
+  color: #673ab7;
+  border: 1px solid #673ab7;
+}
+
+.details-page button[type='button']:hover {
+  background: #f4effc;
+}
+
+/* Loading */
+
+.details-page > p:last-child {
+  text-align: center;
+  padding: 50px;
+  color: #777;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .details-page {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .details-page > h1 {
+    font-size: 26px;
+  }
+
+  .comment-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .details-page button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,71 @@
+<div class="details-page">
+  @if (apartmentData(); as apartment) {
+    <h1>
+      {{ apartment.title }}
+    </h1>
+
+    <p>
+      {{ apartment.location }},
+      {{ apartment.city }}
+    </p>
+
+    <p>
+      {{ apartment.description }}
+    </p>
+
+    <h2>₹{{ apartment.price }}/month</h2>
+
+    <section class="comments-section">
+      <h2>Comments</h2>
+
+      @if (comments().length === 0) {
+        <p>No comments yet.</p>
+      }
+
+      @for (comment of comments(); track comment.id) {
+        <div class="comment">
+          <div class="comment-header">
+            <strong>{{ comment.userName }}</strong>
+
+            <small>
+              {{ comment.createdAt | date: 'medium' }}
+            </small>
+          </div>
+
+          <p>{{ comment.text }}</p>
+        </div>
+      }
+    </section>
+
+    <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+      <button type="button" (click)="markAsFavourite()">Mark as Favourite</button>
+
+      <div class="comment-form">
+        <label for="comment">Leave a comment</label>
+
+        <textarea
+          id="comment"
+          formControlName="comment"
+          placeholder="Add your comment..."
+        ></textarea>
+
+        <button type="submit">Comment</button>
+      </div>
+    </form>
+
+    <div>
+  <form [formGroup]="inquiryForm" (ngSubmit)="addInquiry()">
+    <div class="comment-form">
+      <label for="inquiry">Leave a message</label>
+
+      <textarea id="inquiry" formControlName="inquiry" placeholder="Add your inquiry..."></textarea>
+
+      <button type="submit">Inquiry</button>
+    </div>
+  </form>
+</div>
+
+  } @else {
+    <p>Loading apartment details...</p>
+  }
+</div>

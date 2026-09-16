@@ -1,0 +1,107 @@
+<div class="my-listings-page">
+  <div class="page-header">
+    <div>
+      <h1>My Listings</h1>
+
+      <p>Manage apartments that you have posted.</p>
+    </div>
+
+    <a routerLink="/create-apartment" class="create-button"> + Create New Listing </a>
+  </div>
+
+  <!-- Loading -->
+
+  @if (loading()) {
+    <div class="loading">Loading your listings...</div>
+  }
+
+  <!-- Listings -->
+
+  @else if (myListings().length > 0) {
+    <div class="listing-count">
+      {{ myListings().length }}
+
+      {{ myListings().length === 1 ? 'Listing' : 'Listings' }}
+    </div>
+
+    <div class="listing-grid">
+      @for (apartment of myListings(); track apartment.id) {
+        <div class="listing-card">
+          <!-- Image -->
+
+          <div class="image-container">
+            <img [src]="apartment.images[0]" [alt]="apartment.title" />
+          </div>
+
+          <!-- Content -->
+
+          <div class="listing-content">
+            <h2>
+              {{ apartment.title }}
+            </h2>
+
+            <p class="location">
+              📍
+              {{ apartment.location }},
+              {{ apartment.city }}
+            </p>
+
+            <div class="property-info">
+              <span>
+                🛏
+                {{ apartment.bedrooms }} BHK
+              </span>
+
+              <span>
+                🛁
+                {{ apartment.bathrooms }} Bath
+              </span>
+
+              <span>
+                📐
+                {{ apartment.area }} sq.ft
+              </span>
+            </div>
+
+            <p class="description">
+              {{ apartment.description }}
+            </p>
+
+            <div class="listing-footer">
+              <strong>
+                ₹{{ apartment.price }}
+                <span>/month</span>
+              </strong>
+            </div>
+
+            <!-- Actions -->
+
+            <div class="listing-actions">
+              <a [routerLink]="['/apartments', apartment.id]" class="view-button"> View Details </a>
+
+              <a [routerLink]="['/create-apartment', apartment.id]" class="edit-button"> Edit </a>
+
+              <button type="button" class="delete-button" (click)="deleteListing(apartment)">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  <!-- No listings -->
+
+  @else {
+    <div class="empty-state">
+      <div class="empty-icon">🏠</div>
+
+      <h2>No Listings Yet</h2>
+
+      <p>You haven't posted any apartments yet.</p>
+
+      <a routerLink="/create-apartment" class="create-button"> Create Your First Listing </a>
+    </div>
+  }
+</div>

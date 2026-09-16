@@ -1,0 +1,73 @@
+<div class="favorites-page">
+  <div class="page-header">
+    <div>
+      <h1>My Favorites</h1>
+
+      <p>Apartments you have marked as favourite.</p>
+    </div>
+  </div>
+
+  @if (favoriteApartments().length > 0) {
+    <div class="listing-count">
+      {{ favoriteApartments().length }}
+
+      {{ favoriteApartments().length === 1 ? 'Favorite' : 'Favorites' }}
+    </div>
+
+    <div class="apartment-grid">
+      @for (apartment of favoriteApartments(); track apartment.id) {
+        <mat-card class="apartment-card">
+          <!-- IMAGE -->
+
+          <img
+            mat-card-image
+            class="apartment-image"
+            [src]="apartment.images[0]"
+            [alt]="apartment.title"
+          />
+
+          <!-- CONTENT -->
+
+          <mat-card-content class="card-content">
+            <h2 class="apartment-title">
+              {{ apartment.title }}
+            </h2>
+
+            <p class="location">
+              {{ apartment.location }},
+              {{ apartment.city }}
+            </p>
+
+            <p class="description">
+              {{ apartment.description }}
+            </p>
+
+            <div class="property-info">
+              <span> {{ apartment.bedrooms }} BHK </span>
+
+              <span> {{ apartment.bathrooms }} Bath </span>
+
+              <span> {{ apartment.area }} sq.ft </span>
+            </div>
+
+            <div class="price">₹{{ apartment.price | number }}/month</div>
+          </mat-card-content>
+
+          <!-- ACTIONS -->
+
+          <mat-card-actions class="card-actions">
+            <button mat-raised-button color="primary" [routerLink]="['/apartments', apartment.id]">
+              View Details
+            </button>
+
+            <button mat-stroked-button class="favorite-button">
+              <mat-icon> favorite </mat-icon>
+
+              Favourite
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      }
+    </div>
+  }
+</div>

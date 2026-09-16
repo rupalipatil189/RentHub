@@ -1,0 +1,45 @@
+<div class="apartment-grid">
+  @for (apartment of apartmentData(); track apartment.id) {
+    <mat-card class="apartment-card">
+      <img
+        mat-card-image
+        class="apartment-image"
+        [src]="apartment.images[0]"
+        [alt]="apartment.title"
+      />
+
+      <mat-card-content class="card-content">
+        <h2 class="apartment-title">
+          {{ apartment.title }}
+        </h2>
+
+        <p class="location">
+          <mat-icon>location_on</mat-icon>
+          {{ apartment.location }}, {{ apartment.city }}
+        </p>
+
+        <p class="description">
+          {{ apartment.description }}
+        </p>
+
+        <div class="price">₹{{ apartment.price | number }}/month</div>
+      </mat-card-content>
+
+      <mat-card-actions class="card-actions">
+        <button mat-raised-button color="primary" [routerLink]="['/apartments', apartment.id]">
+          View Details
+        </button>
+
+        <button mat-stroked-button (click)="markAsFavourite(apartment)">
+          @if (favouriteIds().includes(apartment.id)) {
+            <mat-icon class="favourite-active"> favorite </mat-icon>
+            Unfavourite
+          } @else {
+            <mat-icon> favorite_border </mat-icon>
+            Favourite
+          }
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  }
+</div>

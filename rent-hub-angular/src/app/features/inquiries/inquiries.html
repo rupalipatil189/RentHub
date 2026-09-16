@@ -1,0 +1,93 @@
+<div class="inquiries-page">
+
+  <div class="page-header">
+    <div>
+      <h1>My Inquiries</h1>
+      <p>View and track your apartment inquiries.</p>
+    </div>
+
+    <span class="inquiry-count">
+      {{ inquiries().length }}
+      {{ inquiries().length === 1 ? 'Inquiry' : 'Inquiries' }}
+    </span>
+  </div>
+
+  @if (inquiries().length === 0) {
+
+    <div class="empty-state">
+      <div class="empty-icon">💬</div>
+
+      <h2>No inquiries yet</h2>
+
+      <p>
+        You haven't made any apartment inquiries yet.
+      </p>
+
+      <a routerLink="/apartments">
+        Browse Apartments
+      </a>
+    </div>
+
+  } @else {
+
+    <div class="inquiries-list">
+
+      @for (inquiry of inquiries(); track inquiry.id) {
+
+        <div class="inquiry-card">
+
+          <div class="inquiry-header">
+
+            <div class="apartment-info">
+              <h2>Apartment #{{ inquiry.apartmentId }}</h2>
+
+              <span class="inquiry-date">
+                {{ inquiry.createdAt | date: 'medium' }}
+              </span>
+            </div>
+
+          </div>
+
+          <div class="message-section">
+
+            <span class="label">Your inquiry</span>
+
+            <p>
+              {{ inquiry.message }}
+            </p>
+
+          </div>
+
+          <div class="inquiry-details">
+
+            <div>
+              <span class="label">Inquiry ID</span>
+              <span>{{ inquiry.id }}</span>
+            </div>
+
+            <div>
+              <span class="label">Owner ID</span>
+              <span>{{ inquiry.ownerId }}</span>
+            </div>
+
+          </div>
+
+          <div class="inquiry-footer">
+
+            <a
+              [routerLink]="['/apartments', inquiry.apartmentId]"
+            >
+              View Apartment
+            </a>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  }
+
+</div>

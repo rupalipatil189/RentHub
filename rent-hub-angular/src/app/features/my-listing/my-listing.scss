@@ -1,0 +1,347 @@
+.my-listings-page {
+  padding: 35px 50px;
+
+  background: #f5f7fa;
+
+  min-height: calc(100vh - 70px);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  margin: 0 0 6px;
+
+  font-size: 30px;
+
+  color: #1f2937;
+}
+
+.page-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   CREATE BUTTON
+========================= */
+
+.create-button {
+  display: inline-block;
+
+  padding: 11px 18px;
+
+  border-radius: 6px;
+
+  background: #2563eb;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.create-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================
+   COUNT
+========================= */
+
+.listing-count {
+  margin-bottom: 15px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.listing-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.listing-card {
+  overflow: hidden;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.image-container {
+  width: 100%;
+
+  height: 220px;
+
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.listing-card:hover
+.image-container img {
+  transform: scale(1.04);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.listing-content {
+  padding: 20px;
+}
+
+.listing-content h2 {
+  margin: 0 0 8px;
+
+  font-size: 19px;
+
+  color: #1f2937;
+}
+
+.location {
+  margin: 0 0 15px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   PROPERTY INFO
+========================= */
+
+.property-info {
+  display: flex;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+
+  font-size: 13px;
+
+  color: #4b5563;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description {
+  height: 42px;
+
+  overflow: hidden;
+
+  margin-bottom: 15px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.listing-footer {
+  margin-bottom: 18px;
+}
+
+.listing-footer strong {
+  font-size: 22px;
+
+  color: #111827;
+}
+
+.listing-footer span {
+  font-size: 13px;
+
+  font-weight: 400;
+
+  color: #6b7280;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.listing-actions {
+  display: flex;
+
+  gap: 8px;
+}
+
+.listing-actions a,
+.listing-actions button {
+  flex: 1;
+
+  padding: 9px 8px;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+
+/* View */
+
+.view-button {
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+
+  color: white;
+
+  text-decoration: none;
+}
+
+
+/* Edit */
+
+.edit-button {
+  border: 1px solid #d1d5db;
+
+  background: white;
+
+  color: #374151;
+}
+
+.edit-button:hover {
+  background: #f3f4f6;
+}
+
+
+/* Delete */
+
+.delete-button {
+  border: 1px solid #dc2626;
+
+  background: white;
+
+  color: #dc2626;
+}
+
+.delete-button:hover {
+  background: #dc2626;
+
+  color: white;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+  padding: 80px;
+
+  text-align: center;
+
+  color: #6b7280;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background: white;
+
+  border: 1px dashed #d1d5db;
+
+  border-radius: 10px;
+}
+
+.empty-icon {
+  margin-bottom: 15px;
+
+  font-size: 50px;
+}
+
+.empty-state h2 {
+  margin: 0 0 8px;
+
+  color: #1f2937;
+}
+
+.empty-state p {
+  margin-bottom: 25px;
+
+  color: #6b7280;
+}

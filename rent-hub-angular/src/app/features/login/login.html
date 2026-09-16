@@ -1,0 +1,156 @@
+<div class="auth-page">
+
+  <div class="auth-card">
+
+    <!-- Logo -->
+    <div class="auth-header">
+
+      <div class="logo">
+        <span class="logo-icon">🏠</span>
+        <span>Rent<span>Hub</span></span>
+      </div>
+
+      <h1>Welcome Back</h1>
+
+      <p>
+        Login to continue to RentHub
+      </p>
+
+    </div>
+
+
+    <!-- Error -->
+    @if (errorMessage()) {
+
+      <div class="error-message">
+        {{ errorMessage() }}
+      </div>
+
+    }
+
+
+    <!-- Login Form -->
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="login()">
+
+
+      <!-- Email -->
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Enter your email"
+        />
+
+        @if (email?.touched && email?.hasError('required')) {
+
+          <span class="validation-error">
+            Email is required
+          </span>
+
+        }
+
+        @if (email?.touched && email?.hasError('email')) {
+
+          <span class="validation-error">
+            Please enter a valid email address
+          </span>
+
+        }
+
+      </div>
+
+
+      <!-- Password -->
+      <div class="form-group">
+
+        <label for="password">
+          Password
+        </label>
+
+        <div class="password-wrapper">
+
+          <input
+            id="password"
+            [type]="hidePassword() ? 'password' : 'text'"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+
+          <button
+            type="button"
+            class="password-toggle"
+            (click)="togglePassword()">
+
+            {{ hidePassword() ? 'Show' : 'Hide' }}
+
+          </button>
+
+        </div>
+
+
+        @if (
+          password?.touched &&
+          password?.hasError('required')
+        ) {
+
+          <span class="validation-error">
+            Password is required
+          </span>
+
+        }
+
+        @if (
+          password?.touched &&
+          password?.hasError('minlength')
+        ) {
+
+          <span class="validation-error">
+            Password must be at least 6 characters
+          </span>
+
+        }
+
+      </div>
+
+
+      <!-- Login button -->
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="isLoading()">
+
+        @if (isLoading()) {
+          Logging in...
+        } @else {
+          Login
+        }
+
+      </button>
+
+    </form>
+
+
+    <!-- Register -->
+    <div class="auth-footer">
+
+      <span>
+        Don't have an account?
+      </span>
+
+      <a routerLink="/signup">
+        Create Account
+      </a>
+
+    </div>
+
+  </div>
+
+</div>

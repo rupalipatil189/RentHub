@@ -1,0 +1,525 @@
+<div class="create-apartment-page">
+
+  <div class="form-container">
+
+    <div class="form-header">
+
+      <h1>
+        Create New Apartment
+      </h1>
+
+      <p>
+        Add your property details and publish
+        it for prospective tenants.
+      </p>
+
+    </div>
+
+
+    <form
+      [formGroup]="apartmentForm"
+      (ngSubmit)="onSubmit()"
+    >
+
+
+      <!-- ========================= -->
+      <!-- BASIC INFORMATION -->
+      <!-- ========================= -->
+
+      <div class="form-section">
+
+        <h2>
+          Property Information
+        </h2>
+
+
+        <!-- Title -->
+
+        <div class="form-group">
+
+          <label>
+            Property Title *
+          </label>
+
+          <input
+            type="text"
+            formControlName="title"
+            placeholder="e.g. Beautiful 2 BHK Apartment in Wakad"
+          />
+
+          @if (isInvalid('title')) {
+
+            <small class="error">
+              @if (
+                getControl('title')?.hasError('required')
+              ) {
+                Property title is required.
+              }
+
+              @else if (
+                getControl('title')?.hasError('minlength')
+              ) {
+                Title must be at least 5 characters.
+              }
+            </small>
+
+          }
+
+        </div>
+
+
+        <!-- Description -->
+
+        <div class="form-group">
+
+          <label>
+            Description *
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="description"
+            placeholder="Describe the apartment..."
+          ></textarea>
+
+          @if (isInvalid('description')) {
+
+            <small class="error">
+              Description is required and must
+              contain at least 20 characters.
+            </small>
+
+          }
+
+        </div>
+
+
+        <!-- Location + City -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Location *
+            </label>
+
+            <input
+              type="text"
+              formControlName="location"
+              placeholder="e.g. Wakad"
+            />
+
+            @if (isInvalid('location')) {
+
+              <small class="error">
+                Location is required.
+              </small>
+
+            }
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              City *
+            </label>
+
+            <input
+              type="text"
+              formControlName="city"
+              placeholder="e.g. Pune"
+            />
+
+            @if (isInvalid('city')) {
+
+              <small class="error">
+                City is required.
+              </small>
+
+            }
+
+          </div>
+
+        </div>
+
+
+        <!-- Price + Area -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Monthly Rent *
+            </label>
+
+            <input
+              type="number"
+              formControlName="price"
+              placeholder="25000"
+            />
+
+            @if (isInvalid('price')) {
+
+              <small class="error">
+                Enter a valid monthly rent.
+              </small>
+
+            }
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Area (sq.ft) *
+            </label>
+
+            <input
+              type="number"
+              formControlName="area"
+              placeholder="1100"
+            />
+
+            @if (isInvalid('area')) {
+
+              <small class="error">
+                Area must be at least 100 sq.ft.
+              </small>
+
+            }
+
+          </div>
+
+        </div>
+
+
+        <!-- Bedrooms + Bathrooms -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Bedrooms *
+            </label>
+
+            <select formControlName="bedrooms">
+
+              <option [ngValue]="null">
+                Select bedrooms
+              </option>
+
+              <option [ngValue]="1">
+                1 BHK
+              </option>
+
+              <option [ngValue]="2">
+                2 BHK
+              </option>
+
+              <option [ngValue]="3">
+                3 BHK
+              </option>
+
+              <option [ngValue]="4">
+                4 BHK
+              </option>
+
+              <option [ngValue]="5">
+                5 BHK
+              </option>
+
+            </select>
+
+            @if (isInvalid('bedrooms')) {
+
+              <small class="error">
+                Please select bedrooms.
+              </small>
+
+            }
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Bathrooms *
+            </label>
+
+            <select formControlName="bathrooms">
+
+              <option [ngValue]="null">
+                Select bathrooms
+              </option>
+
+              <option [ngValue]="1">
+                1 Bathroom
+              </option>
+
+              <option [ngValue]="2">
+                2 Bathrooms
+              </option>
+
+              <option [ngValue]="3">
+                3 Bathrooms
+              </option>
+
+              <option [ngValue]="4">
+                4 Bathrooms
+              </option>
+
+            </select>
+
+            @if (isInvalid('bathrooms')) {
+
+              <small class="error">
+                Please select bathrooms.
+              </small>
+
+            }
+
+          </div>
+
+        </div>
+
+
+        <!-- Property Type -->
+
+        <div class="form-group">
+
+          <label>
+            Property Type *
+          </label>
+
+          <select formControlName="propertyType">
+
+            <option value="Apartment">
+              Apartment
+            </option>
+
+            <option value="Villa">
+              Villa
+            </option>
+
+            <option value="House">
+              House
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- Furnished -->
+
+        <div class="form-group">
+
+          <label>
+            Furnished *
+          </label>
+
+          <div class="radio-group">
+
+            <label>
+
+              <input
+                type="radio"
+                value="Fully Furnished"
+                formControlName="furnished"
+              />
+
+              Fully Furnished
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="radio"
+                value="Semi-Furnished"
+                formControlName="furnished"
+              />
+
+              Semi-Furnished
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="radio"
+                value="Unfurnished"
+                formControlName="furnished"
+              />
+
+              Unfurnished
+
+            </label>
+
+          </div>
+
+          @if (isInvalid('furnished')) {
+
+            <small class="error">
+              Please select furnishing type.
+            </small>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- AMENITIES -->
+      <!-- ========================= -->
+
+
+
+      <!-- ========================= -->
+      <!-- IMAGES -->
+      <!-- ========================= -->
+
+      <div class="form-section">
+
+        <h2>
+          Property Images
+        </h2>
+
+        <div class="form-group">
+
+          <label>
+            Image URLs *
+          </label>
+
+          <textarea
+            rows="3"
+            formControlName="images"
+            placeholder="Enter image URLs separated by commas"
+          ></textarea>
+
+          <small class="hint">
+            Example:
+            https://example.com/image1.jpg,
+            https://example.com/image2.jpg
+          </small>
+
+          @if (isInvalid('images')) {
+
+            <small class="error">
+              At least one image is required.
+            </small>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- CONTACT -->
+      <!-- ========================= -->
+
+      <div class="form-section">
+
+        <h2>
+          Contact Information
+        </h2>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Owner Name *
+            </label>
+
+            <input
+              type="text"
+              formControlName="ownerName"
+              placeholder="Owner name"
+            />
+
+            @if (isInvalid('ownerName')) {
+
+              <small class="error">
+                Owner name is required.
+              </small>
+
+            }
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Available From *
+          </label>
+
+          <input
+            type="date"
+            formControlName="availableFrom"
+          />
+
+          @if (isInvalid('availableFrom')) {
+
+            <small class="error">
+              Availability date is required.
+            </small>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- BUTTONS -->
+      <!-- ========================= -->
+
+      <div class="form-actions">
+
+        <button
+          type="button"
+          class="cancel-button">
+
+          Cancel
+
+        </button>
+
+
+        <button
+          type="submit"
+          class="submit-button"
+          [disabled]="apartmentForm.invalid">
+
+          @if(isEditMode) {
+            <span>Edit Apartment</span>
+          } @else {
+            <span> Create Apartment</span>
+          }
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

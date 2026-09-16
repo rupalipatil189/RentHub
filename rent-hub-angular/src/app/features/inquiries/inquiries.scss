@@ -1,0 +1,205 @@
+.inquiries-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  h1 {
+    margin: 0 0 6px;
+    font-size: 32px;
+    color: #222;
+  }
+
+  p {
+    margin: 0;
+    color: #777;
+  }
+}
+
+.inquiry-count {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #f1ebfa;
+  color: #673ab7;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.inquiries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.inquiry-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.inquiry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+}
+
+.apartment-info {
+  h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: #333;
+  }
+}
+
+.inquiry-date {
+  font-size: 13px;
+  color: #888;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status.new {
+  background: #fff4d6;
+  color: #9a6b00;
+}
+
+.status.read {
+  background: #e8f0fe;
+  color: #3568b8;
+}
+
+.status.responded {
+  background: #e4f7ea;
+  color: #218838;
+}
+
+.status.closed {
+  background: #eeeeee;
+  color: #666;
+}
+
+.message-section {
+  padding: 20px 0;
+
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+    color: #444;
+    line-height: 1.6;
+  }
+}
+
+.inquiry-details {
+  display: flex;
+  gap: 60px;
+  padding: 16px 0;
+  border-top: 1px solid #eee;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+  }
+}
+
+.inquiry-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+
+  a {
+    color: #673ab7;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.empty-state {
+  padding: 70px 20px;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #ccc;
+  border-radius: 14px;
+
+  .empty-icon {
+    margin-bottom: 15px;
+    font-size: 40px;
+  }
+
+  h2 {
+    margin: 0 0 8px;
+    color: #444;
+  }
+
+  p {
+    margin: 0 0 20px;
+    color: #888;
+  }
+
+  a {
+    color: #673ab7;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .inquiry-header {
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .inquiry-details {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

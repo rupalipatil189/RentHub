@@ -1,0 +1,169 @@
+<mat-toolbar class="navbar">
+
+  <!-- Logo -->
+  <a
+    class="logo"
+    routerLink="/home">
+
+    <mat-icon>home</mat-icon>
+
+    <span>
+      Rent<span class="logo-highlight">Hub</span>
+    </span>
+
+  </a>
+
+
+  <!-- Navigation -->
+  <nav class="nav-links">
+
+    <a
+      mat-button
+      routerLink="/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+
+      <mat-icon>home</mat-icon>
+      Home
+
+    </a>
+
+
+    <!-- Logged-in navigation -->
+    @if (isLoggedIn) {
+
+      @if (isLandlord) {
+        <a
+          mat-button
+          routerLink="/my-listing"
+          routerLinkActive="active">
+
+          <mat-icon>apartment</mat-icon>
+          My Listings
+
+        </a>
+      }
+
+      @if (!isLandlord) {
+      <a
+        mat-button
+        routerLink="/favourites"
+        routerLinkActive="active">
+
+        <mat-icon>favorite</mat-icon>
+        Favourites
+
+      </a>
+    }
+
+
+      <a
+        mat-button
+        routerLink="/inquiries"
+        routerLinkActive="active">
+
+        <mat-icon>mail</mat-icon>
+        Inquiries
+
+      </a>
+
+
+      <!-- Landlord only -->
+      @if (isLandlord) {
+        <a
+          mat-raised-button
+          class="post-button"
+          routerLink="/create-apartment">
+
+          <mat-icon>add</mat-icon>
+          Post Apartment
+
+        </a>
+      }
+
+    }
+
+  </nav>
+
+
+  <!-- Right side -->
+  <div class="right-section">
+
+    <!-- Logged out -->
+    @if (!isLoggedIn) {
+
+      <a
+        mat-button
+        routerLink="/login">
+
+        Login
+
+      </a>
+
+      <a
+        mat-raised-button
+        class="signup-button"
+        routerLink="/signup">
+
+        Sign Up
+
+      </a>
+
+    }
+
+
+    <!-- Logged in -->
+    @if (isLoggedIn) {
+
+      <button
+        mat-button
+        [matMenuTriggerFor]="profileMenu"
+        class="profile-button">
+
+        <span class="avatar">
+          {{ currentUser()?.name?.charAt(0) }}
+        </span>
+
+        <span class="user-name">
+          {{ currentUser()?.name }}
+        </span>
+
+        <mat-icon>keyboard_arrow_down</mat-icon>
+
+      </button>
+
+
+      <!-- Profile menu -->
+      <mat-menu #profileMenu="matMenu">
+
+        <div class="profile-info">
+
+          <strong>
+            {{ currentUser()?.name }}
+          </strong>
+
+          <span>
+            {{ currentUser()?.email }}
+          </span>
+
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <button
+          mat-menu-item
+          (click)="logout()">
+
+          <mat-icon>logout</mat-icon>
+
+          <span>Logout</span>
+
+        </button>
+
+      </mat-menu>
+
+    }
+
+  </div>
+
+</mat-toolbar>
